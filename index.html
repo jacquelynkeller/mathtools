@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Compound Interest Visual Aid</title>
+    
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Interest Calculator</title>
+    </head>
+
+<body class="bg-green">
+    <div id="main" class="bg-white">
+
+        <div>
+            <h1>How much does a $1000 loan cost?</h1>
+            <p> Use the sliders and the drop down options to change the conditions of the loan.
+               
+                to change the down payment, the interest rate and 
+                the length of time until you will repay your loan to see how it impacts 
+                the cost of taking out a $1000 loan. You can also change the compounding 
+                frequency. </p>
+        </div>
+        <div class="d-flex justify-content-center" id="flex-container">
+
+            
+            <div class="p-2" id="slidecontainer">
+
+                <h4> Down payment:</h4>
+                <input type="range" min="0" max="1000" value="500" class="slider" id="principle" name = "principle" onChange="update()">
+                            
+                <h4> Interest rate:</h4>
+                <input type="range" min="0" max="15" value="7" class="slider" id="rate" name = "rate" onChange="update()">
+                          
+                <h4> Time:</h4>
+                <input type="range" min="1" max="30" value="15" class="slider" id="time" name = "time" onChange="update()">
+                
+            </br></br><p>With a downpayment of <b>$<span id="p"></span></b>, you are borrowing <b>$<span id="loan"></span></b>
+                    </span> at an interest rate of <b><span id="r"></span>%</b> per annum, for                
+                    <label><span id="t"></span> </label>
+                <select id="timetype" onChange="update()">
+                    <option value="0">years</option>
+                    <option value="1">months</option>
+                    <option value="2">weeks</option>
+                    <option value="3">days</option>
+                </select>,
+            
+                <label>compounded</label>
+                <select id="freq" onChange="update()">
+                    <option value="0">annually</option>
+                    <option value="1">monthly</option>
+                    <option value="2">biWeekly</option>
+                    <option value="3">weekly</option>
+                    <option value="4">daily</option>
+                </select>.
+            </div>
+        
+            <div class="p-2" id="chart_div" style="width:400px; height: 400px;"></div>
+        </div>
+        
+        <div>
+            <h2>The total cost of the loan is: $<span id="value"></span></h2>
+        </div>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="myScript.js"></script>
+    </div>
+
+    
+</body>
+</html>
