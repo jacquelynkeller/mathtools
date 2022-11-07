@@ -1,78 +1,61 @@
 
 body {
-  background-color: #04AA6D;
-  position: relative;
-  color: black;
-}
-h4{
-  padding-top: 8px;
-  text-align: center;
-  font-size: 17px;
-}
-
-h1{
-  text-align: center;
-}
-
-h2{
-  padding-bottom: 0.5em;
-  text-align: center;
-}
-#main{
-  color:black;
-  display:block;
-  max-width: 900px;
-  margin: auto;
-  margin-top: 5%;
-  padding: 2em;
-}
-#flex-container{
-  margin-top: -1em;;
-}
-#slidecontainer {
-  margin-top: 3em;
-    width: 50%;
+    background-color: #04AA6D;
+    position: relative;
+    color: black;
   }
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+  h4{
+    padding-top: 8px;
+    text-align: center;
+    font-size: 17px;
   }
   
-  .slider:hover {
-    opacity: 1;
+  h1{
+    text-align: center;
   }
   
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #9a77bb;
-    cursor: pointer;
+  h2{
+    padding-bottom: 0.5em;
+    text-align: center;
   }
-  #rate.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #e02d00;
-    cursor: pointer;
+  #main{
+    color:black;
+    display:block;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 5%;
+    padding: 2em;
   }
-  #time.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #04AA6D;
-    cursor: pointer;
+  #flex-container{
+    margin-top: -1em;;
   }
+   
+    .helpImnotbeingpaid{
+        width: 100%;
+        max-height: fit-content;
+    }
+    textarea{
+        margin-left: 2%;
+        width: 40%;
+        height: 150px;
+        padding: 12px 20px;
+        font-size: 16px;
+        resize: none;
+      }
+      #luck{
+        float:left;
+        transform: translate(70%,-130%);
+      }
+      .serioslymrskellerismakingmeworkforfree{
+        width: 100%;
+        transform: translate(50%,-100%);
+        max-height: fit-content;
+      }
+      button{
+        width: fit-content;
+        transform: translate(60%, 0);
+      }
+      input{
+        width: fit-content;
+        transform: translate(40%, 0);
+      }
