@@ -12,7 +12,7 @@
     </head>
 
 <body class="bg-green">
-    <div class="grid-container" id="main">
+    <div class="bg-white" id="main">
 
         <div id="title">
             <h1>Budget Event Generator</h1>
@@ -22,14 +22,14 @@
 
         <div id="flex-container">
 
-                <div class="left">
+                <div id="ScenarioBox">
                     
                     <p><label>Generate a scenario:</label></p>
                     <textarea id="scenario" rows="8" >Click to generate a scenario.</textarea><br/>
                         <input type="submit" id="scenarioButton" value="Generate scenario!" onClick="getScenario()">
                         <button onclick="copyTextScenario()">Copy text</button>
                 </div>
-                <div class="right">
+                <div class="EventBox">
 
                     <p><label>Generate an event:</label></p>
                     <textarea id="event" rows="7" >Click to generate an event.</textarea>
