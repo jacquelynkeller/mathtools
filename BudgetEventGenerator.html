@@ -20,23 +20,23 @@
                 events to use on your budget assignment.</p>
         </div>
 
-        <div id="ScenarioBox">
+        <div id="ScenarioBox" class="child">
                     
-            <p><label>Generate a scenario:</label></p>
-                <textarea id="scenario" rows="8" columns="40" >Click to generate a scenario.</textarea><br/>
+            <h4><label>Generate a scenario:</label></h4>
+                <textarea id="scenario" rows="8">Click to generate a scenario.</textarea>
                 <input type="submit" id="scenarioButton" value="Generate scenario!" onClick="getScenario()">
-                 <button onclick="copyTextScenario()">Copy text</button>
+                <button onclick="copyTextScenario()">Copy text</button>
         </div>
             
-        <div id="EventBox">
+        <div id="EventBox" class="child">
 
-            <p><label>Generate an event:</label></p>
-            <textarea id="event" rows="7" columns="40" >Click to generate an event.</textarea>
-            <br/>
+            <h4><label>Generate an event:</label></h4>
+            <textarea id="event" rows="7">Click to generate an event.</textarea>
             <input type="submit" id="eventButton" value="Generate event!" onClick="getEvent()">
             <button onclick="copyTextEvent()">Copy text</button>
             <br/><br/>
-            <textarea id="luck" rows="2" cols="5">Luck</textarea><br>
+            <h4> Luck Score:</h4>
+            <textarea id="luck" rows="2" cols="5"></textarea><br>
         </div>
                 
     </div>
