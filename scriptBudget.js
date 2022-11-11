@@ -61,7 +61,7 @@ function getScenario()
  
 function getEvent()
 {
-var chooseEvent=Math.floor(Math.random() * 5);
+var chooseEvent=Math.floor(Math.random() * 19);
 count++;
 
 switch (chooseEvent) {
@@ -94,7 +94,7 @@ switch (chooseEvent) {
         luck=+3;
         break;
     case 7:
-        chooseEvent = "Your car is making a funny sound. It's only a matter of time until it needs to be replaced. Vehicle exenses incread $10 a month. Luck -5";
+        chooseEvent = "Your car is making a funny sound. It's only a matter of time until it needs to be replaced. Vehicle exenses increased $10 a month. Luck -5";
         luck=-5;
         break;
     case 8:
