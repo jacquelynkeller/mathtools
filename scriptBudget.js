@@ -61,7 +61,7 @@ function getScenario()
  
 function getEvent()
 {
-var chooseEvent=Math.floor(Math.random() * 19);
+var chooseEvent=Math.floor(Math.random() * 20);
 count++;
 
 switch (chooseEvent) {
