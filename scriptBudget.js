@@ -38,7 +38,7 @@ function getScenario()
     
     switch (chooseScenario) {
         case 0:
-            randomScenario = "test 0";
+            randomScenario = "You work a part time job and bring in about $500 a month. Your car insurance costs $100 a month, your phone costs $80 a month and your parents charge you $50 a month in rent. You hope to go to university after high school, and have a goal of saving up as much as you can. You also have a gym membership that costs $40 a month, Spotify for $15 and Netflix for $10.";
             break;
         case 1:
             randomScenario = "test 1";
@@ -130,7 +130,7 @@ switch (chooseEvent) {
         luck=-10;
         break;
     case 16:
-        chooseEvent = "One of your memberships has increased it's price by $5. Luck -2";
+        chooseEvent = "One of your monthly memberships has increased it's price by $5. Luck -2";
         luck=-2;
         break;
     case 17:
