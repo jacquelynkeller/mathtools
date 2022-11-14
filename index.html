@@ -18,15 +18,19 @@
             <h1>Loans with Compound Interest</h1>
             <h3>How much does a $1000 loan cost?</h3>
             <p> Use the sliders and the drop down options to change the conditions of the loan.              
-                Change the down payment, the interest rate and the length of time until you will 
-                repay your loan to see how it impacts the cost of taking out a $1000 loan. 
-                You can also change the compounding frequency. </p>
-        </div>
+                Change the interest type, down payment, the interest rate and the length of time until you will repay your loan to see how it impacts the cost of taking out a $1000 loan. You can also change the compounding frequency. </p>
+             </div>
         <div class="d-flex justify-content-center" id="flex-container">
 
             
             <div class="p-2" id="slidecontainer">
-
+                <h4> Simple or Compound Interest?</h4>
+                <input type="radio" id="simpleInterestRadio" name="interestType" value="Simple Interest" onclick="update()">
+                    <label for="simpleInterestRadio">Simple Interest</label>
+                    
+                    <input type="radio" id="compoundInterestRadio" name="interestType" value="Compound Interest" onclick="update()" checked="true">
+                    <label for="compoundInterestRadio">Compound Interest</label>
+                
                 <h4> Down payment:</h4>
                 <input type="range" min="0" max="1000" value="500" class="slider" id="principle" name = "principle" onChange="update()">
                             
@@ -58,6 +62,17 @@
         
             <div class="p-2" id="chart_div" style="width:400px; height: 400px;"></div>
         </div>
+        
+        <div>
+            <h2>The total cost of the loan is: $<span id="value"></span></h2>
+        </div>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="myScript.js"></script>
+    </div>
+
+    
+</body>
+</html>
         
         <div>
             <h2>The total cost of the loan is: $<span id="value"></span></h2>
