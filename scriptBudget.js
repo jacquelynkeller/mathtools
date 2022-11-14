@@ -33,24 +33,21 @@ function copyTextEvent()
 
 function getScenario()
 {
-    var chooseScenario=Math.floor(Math.random() * 5);
+    var chooseScenario=Math.floor(Math.random() * 4);
     var randomScenario;
     
     switch (chooseScenario) {
         case 0:
-            randomScenario = "You work a part time job and bring in about $500 a month. Your car insurance costs $100 a month, your phone costs $80 a month and your parents charge you $50 a month in rent. You hope to go to university after high school, and have a goal of saving up as much as you can. You also have a gym membership that costs $40 a month, Spotify for $15 and Netflix for $10.";
+            randomScenario = "You work a part time job and bring in about $500 a month. Your car insurance costs $100 a month, your phone costs $80 a month and your parents charge you $50 a month in rent. You hope to go to university after high school, and have a goal of saving up as much as you can. You also have a gym membership that costs $40 a month, Spotify for $15 and Netflix for $10. In your free time, you like hanging out with friends at the movies.";
             break;
         case 1:
-            randomScenario = "test 1";
+            randomScenario = "You work a part time job and bring in about $550 a month. Your car insurance costs $110 a month, your phone costs $85 a month and your parents charge you $60 a month in rent. You hope to go to college after high school, and are working on saving up for it. You are also saving for a new laptop for school. In your free time, you like to go to the gym, as you find it very helpful to your mental health.";
             break;
         case 2:
-            randomScenario = "test 2";
+            randomScenario = "You work a part time job and bring in about $450 a month. Your car insurance costs $90 a month, your phone costs $60 a month and your parents charge you $20 a month in rent. You hope to go to university after high school, and are working on saving up for it. Your car is getting old and has some big repairs it will need soon.";
             break;
         case 3:
-            randomScenario = "test 3";
-            break;
-        case 4:
-            randomScenario = "test 4";
+            randomScenario = "You work a part time job and bring in about $400 a month. Your car insurance costs $65 a month, your phone costs $55 a month and your parents charge you $30 a month in rent. You hope to go to college after high school, and are working on saving up for it. You are also saving up for your own car, instead of always relying on your parents. You enjoy going out for lunch each day with your friends.";
             break;
     }
 
