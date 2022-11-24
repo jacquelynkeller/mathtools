@@ -60,17 +60,9 @@ function update(){
     var y = document.getElementById('timetype').value;
     const timeindex = +y;
 
-
-    if(document.getElementById("compoundInterestRadio").checked==true)
-    {
-        intAmount = loan * Math.pow(1+i/compoundfreq[freqIndex],compoundfreq[freqIndex]*(t/time[timeindex])) - loan;  
-    }
-
-    else 
-    {
-        intAmount = loan*(i*t);
-    }
-
+   var intAmount = loan * Math.pow(1+i/compoundfreq[freqIndex],compoundfreq[freqIndex]*(t/time[timeindex])) - loan;  
+   var intAmountSimple = loan*(i*t);
+   
     google.charts.load('current', {packages: ['corechart', 'bar']});
     google.charts.setOnLoadCallback(function() {
         drawBasic(prin,loan,intAmount)
@@ -92,7 +84,8 @@ function update(){
     function drawBasic(principle, loan, interest) {
           var data = google.visualization.arrayToDataTable([
             ['', 'Downpayment', 'Loan Amount', 'Interest'],
-            ['', principle, loan, interest]
+            ['', principle, loan, intAmount]
+            ['', principle, loan, intAmountSimple]
           ]);
     
           var options = {
