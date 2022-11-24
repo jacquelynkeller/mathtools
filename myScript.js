@@ -68,7 +68,7 @@ function update(){
 
     else 
     {
-        intAmount = loan*(i/compoundfreq[freqIndex])*(t/time[timeindex]);
+        intAmount = loan*(i*t);
     }
 
     google.charts.load('current', {packages: ['corechart', 'bar']});
@@ -91,7 +91,7 @@ function update(){
 
     function drawBasic(principle, loan, interest) {
           var data = google.visualization.arrayToDataTable([
-            ['', 'Principle', 'Loan Amount', 'Interest'],
+            ['', 'Downpayment', 'Loan Amount', 'Interest'],
             ['', principle, loan, interest]
           ]);
     
