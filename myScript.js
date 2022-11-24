@@ -1,15 +1,15 @@
-var downPayment = 500;
+var prin = 500;
 var i= 7/100;
 var loan, t = 15, intAmount;
-loan= 1000-downPayment;
+loan= 1000-prin;
 
 
 const compoundfreq = [1,12,26,52,365];
 const time = [1,12,52,365];
 
 
-var slider = document.getElementById("downPayment");
-var output = document.getElementById("d");
+var slider = document.getElementById("principle");
+var output = document.getElementById("p");
 output.innerHTML = slider.value; // Display the default slider value
 
    
@@ -30,8 +30,8 @@ update();
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
     output.innerHTML = this.value;
-    downPayment = +output.innerHTML;
-    loan = 1000 - downPayment;
+    prin = +output.innerHTML;
+    loan = 1000 - prin;
     output4 = document.getElementById("loan");
     output4.innerHTML = loan;
 
@@ -68,12 +68,12 @@ function update(){
 
     else 
     {
-        intAmount = loan*(i)*(t);
+        intAmount = loan*(i/compoundfreq[freqIndex])*(t/time[timeindex]);
     }
 
     google.charts.load('current', {packages: ['corechart', 'bar']});
     google.charts.setOnLoadCallback(function() {
-        drawBasic(downPayment,loan,intAmount)
+        drawBasic(prin,loan,intAmount)
      });
      if(timeindex == 3 ){
         var maxvals = 1010
@@ -91,7 +91,7 @@ function update(){
 
     function drawBasic(principle, loan, interest) {
           var data = google.visualization.arrayToDataTable([
-            ['', 'Down Payment', 'Loan Amount', 'Interest'],
+            ['', 'Principle', 'Loan Amount', 'Interest'],
             ['', principle, loan, interest]
           ]);
     
