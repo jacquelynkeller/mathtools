@@ -1,8 +1,7 @@
 var prin = 500;
 var i= 7/100;
-var loan, t = 15, intAmount;
-loan= 1000-prin;
-
+var t = 15, intAmount;
+var loan = 1000-prin;
 
 const compoundfreq = [1,12,26,52,365];
 const time = [1,12,52,365];
@@ -27,6 +26,7 @@ var output4 = document.getElementById("loan");
 
 update();
     
+
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
     output.innerHTML = this.value;
@@ -49,6 +49,7 @@ slider3.oninput = function() {
 }
 
 
+
 function update(){
     var select = document.getElementById('freq');
     var option = select.options[select.selectedIndex];
@@ -60,14 +61,8 @@ function update(){
     var y = document.getElementById('timetype').value;
     const timeindex = +y;
 
-   var intAmount = loan * Math.pow(1+i/compoundfreq[freqIndex],compoundfreq[freqIndex]*(t/time[timeindex])) - loan;  
-   var intAmountSimple = loan*(i*t);
-   
-    google.charts.load('current', {packages: ['corechart', 'bar']});
-    google.charts.setOnLoadCallback(function() {
-        drawBasic(prin,loan,intAmount)
-     });
-     if(timeindex == 3 ){
+
+    if(timeindex == 3 ){
         var maxvals = 1010
        }
        else if(timeindex == 2){
@@ -78,15 +73,53 @@ function update(){
        }
        else{
         var maxvals = 4000
+       }
 
-    }
+    compoundIntAmount = loan * Math.pow(1+i/compoundfreq[freqIndex],compoundfreq[freqIndex]*(t/time[timeindex])) - loan;  
 
-    function drawBasic(principle, loan, interest) {
-          var data = google.visualization.arrayToDataTable([
-            ['', 'Downpayment', 'Loan Amount', 'Interest'],
-            ['', principle, loan, intAmount]
-            ['', principle, loan, intAmountSimple]
-          ]);
+    simpleIntAmount = loan*(i)*(t/time[timeindex]);
+
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(function() {
+        if(document.getElementById("compareRadio").checked==true)
+        {
+            drawCompare(prin,loan,compoundIntAmount,simpleIntAmount);
+            var difference = compoundIntAmount - simpleIntAmount;
+
+            if (difference>0){
+                document.getElementById("finalStatement").innerHTML = "The compound interest loan costs $" + difference.toFixed(2) + " more than the simple interest loan." 
+            }
+            else 
+            document.getElementById("finalStatement").innerHTML = "The compound interest loan costs $" + -1*difference.toFixed(2) + " less than the simple interest loan." 
+        }
+
+        else if(document.getElementById("simpleInterestRadio").checked==true)
+        {
+            intAmount = simpleIntAmount
+            drawBasic(prin, loan, intAmount);
+            var roundedInterest = intAmount.toFixed(2);
+            var cost = (1000 + intAmount).toFixed(2);
+            document.getElementById("finalStatement").innerHTML = "The amount of simple interest on this loan is $" + roundedInterest+ ", bringing the total cost of the loan to $" + cost;
+        }
+
+        else if(document.getElementById("compoundInterestRadio").checked==true)
+        {
+            intAmount = compoundIntAmount
+            drawBasic(prin, loan, intAmount);
+            var roundedInterest = intAmount.toFixed(2);
+            var cost = (1000 + intAmount).toFixed(2);
+            document.getElementById("finalStatement").innerHTML = "The amount of compound interest on this loan is $" + roundedInterest + ", bringing the total cost of the loan to $" + cost;
+        }
+
+     });
+
+    
+    function drawCompare(principle, loan, compoundInterest, simpleInterest) {
+        var data = google.visualization.arrayToDataTable([
+            ['Type', 'Principle', 'Loan Amount', 'Interest'],
+            ['Simple', principle, loan, simpleInterest],
+            ['Compound', principle, loan, compoundInterest]
+            ]);
     
           var options = {
             chartArea: {width: '50%'},
@@ -96,7 +129,7 @@ function update(){
                 maxValue: maxvals,
                 format: 'currency',
                 textStyle : {
-                    fontSize: 14 // or the number you want
+                    fontSize: 14
                 }
             },
             series:{
@@ -105,12 +138,70 @@ function update(){
                 2:{color:'#e02d00'}
             }
           };
-    
+        
           var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+           chart.draw(data, options);
+        }
     
-          chart.draw(data, options);
+    
+    function drawBasic(principle, loan, interest)
+        {
+            if(document.getElementById("compoundInterestRadio").checked==true)
+            {
+                var data = google.visualization.arrayToDataTable([
+                ['Type', 'Principle', 'Loan Amount', 'Interest'],
+                ['Compound', principle, loan, interest]
+                ]);
+        
+                var options = {
+                    chartArea: {width: '50%'},
+                    isStacked: true,
+                    vAxis: {
+                        minValue: 0,
+                        maxValue: maxvals,
+                        format: 'currency',
+                        textStyle : {
+                            fontSize: 14
+                        }
+                    },
+                    series:{
+                        0:{color:'#9a77bb'},
+                        1:{color:'#42daf5'},
+                        2:{color:'#e02d00'}
+                    }
+                };
+                
+                var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+        }
+
+        if(document.getElementById("simpleInterestRadio").checked==true)
+        {
+          var data = google.visualization.arrayToDataTable([
+            ['Type', 'Principle', 'Loan Amount', 'Interest'],
+            ['Simple', principle, loan, interest]
+            ]);
+    
+          var options = {
+            chartArea: {width: '50%'},
+            isStacked: true,
+            vAxis: {
+                minValue: 0,
+                maxValue: maxvals,
+                format: 'currency',
+                textStyle : {
+                    fontSize: 14
+                }
+            },
+            series:{
+                0:{color:'#9a77bb'},
+                1:{color:'#42daf5'},
+                2:{color:'#e02d00'}
+            }
+          };
+        
+          var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+           chart.draw(data, options);
+        }
     }
-    const cost = 1000+(+intAmount);
-    document.getElementById("value").innerHTML = cost.toFixed(2);
 }
-    
