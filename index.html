@@ -26,29 +26,30 @@
             <div class="p-2" id="slidecontainer">
                 <h4> Select a mode:</h4>
                 
-                <input type="radio" id="simpleInterestRadio" name="interestType" value="Simple Interest" onclick="update()">
-                <label for="simpleInterestRadio">One Payment - Simple Interest</label>
+                <b>One Payment:</b><input type="radio" id="simpleInterestRadio" name="interestType" value="Simple Interest" onclick="update()">
+                <label for="simpleInterestRadio">Simple</label>
                     
                 <input type="radio" id="compoundInterestRadio" name="interestType" value="Compound Interest" onclick="update()">
-                <label for="compoundInterestRadio">One Payment - Compound Interest</label>
+                <label for="compoundInterestRadio">Compound</label>
 
                 <input type="radio" id="compareRadio" name="interestType" value="Compare" onclick="update()" checked="true">
                 <label for="compareRadio">Multiple Payments</label>
                 
-                <h4> Down payment:</h4> $<span id="p"></span>
+                <b> Down payment:</b> $<span id="p"></span>
                 <input type="range" min="0" max="1000" value="500" class="slider" id="principle" name = "principle" onChange="update()">
                             
-                <h4> Interest rate:</h4> <span id="r"></span>%
+                <b> Interest rate:</b> <span id="r"></span>%
                 <input type="range" min="0" max="15" value="7" class="slider" id="rate" name = "rate" onChange="update()">
                           
-                <h4> Time:</h4> <span id="t"></span> <select id="timetype" onChange="update()">
+                <b> Time:</b> <span id="t"></span> <select id="timetype" onChange="update()">
                     <option value="0">years</option>
                     <option value="1">months</option>
                     <option value="2">weeks</option>
                     <option value="3">days</option>
                 </select>
                 <input type="range" min="1" max="30" value="15" class="slider" id="time" name = "time" onChange="update()">
-                
+
+                /* Summary text:
             </br></br><p id="summary"> With a downpayment of <b>$<span id="p"></span></b>, you are borrowing <b>$<span id="loan"></span></b>
                     </span> at an interest rate of <b><span id="r"></span>%</b> per annum, for                
                     <label><span id="t"></span> </label>
@@ -58,15 +59,19 @@
                     <option value="2">weeks</option>
                     <option value="3">days</option>
                 </select>,
-            
-                <label>compounded</label>
+                */
+                
+                <b>Compounded Frequency:</b>
                 <select id="freq" onChange="update()">
                     <option value="0">annually</option>
                     <option value="1">monthly</option>
                     <option value="2">biWeekly</option>
                     <option value="3">weekly</option>
                     <option value="4">daily</option>
-                </select>.
+                </select>
+                
+
+                
             </div>
         
             <div class="p-2" id="chart_div" style="width:400px; height: 400px;"></div>
