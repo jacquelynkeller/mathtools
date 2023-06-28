@@ -26,11 +26,11 @@
             <div class="p-2" id="slidecontainer">
                 <h4> Select a mode:</h4>
                 
-                <b>One Payment:</b><input type="radio" id="simpleInterestRadio" name="interestType" value="Simple Interest" onclick="update()">
+                <b>One Payment: </b><input type="radio" id="simpleInterestRadio" name="interestType" value="Simple Interest" onclick="update()">
                 <label for="simpleInterestRadio">Simple</label>
                     
                 <input type="radio" id="compoundInterestRadio" name="interestType" value="Compound Interest" onclick="update()">
-                <label for="compoundInterestRadio">Compound</label>
+                <label for="compoundInterestRadio">Compound</label><br/>
 
                 <input type="radio" id="compareRadio" name="interestType" value="Compare" onclick="update()" checked="true">
                 <label for="compareRadio">Multiple Payments</label>
@@ -70,7 +70,8 @@
                     <option value="4">daily</option>
                 </select>
                 
-
+                <div id="multiplepayments">
+                </div>
                 
             </div>
         
