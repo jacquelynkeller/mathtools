@@ -27,21 +27,26 @@
                 <h4> Select a mode:</h4>
                 
                 <input type="radio" id="simpleInterestRadio" name="interestType" value="Simple Interest" onclick="update()">
-                <label for="simpleInterestRadio">Simple</label>
+                <label for="simpleInterestRadio">One Payment - Simple Interest</label>
                     
                 <input type="radio" id="compoundInterestRadio" name="interestType" value="Compound Interest" onclick="update()">
-                <label for="compoundInterestRadio">Compound</label>
+                <label for="compoundInterestRadio">One Payment - Compound Interest</label>
 
                 <input type="radio" id="compareRadio" name="interestType" value="Compare" onclick="update()" checked="true">
-                <label for="compareRadio">Compare</label>
+                <label for="compareRadio">Multiple Payments</label>
                 
-                <h4> Down payment:</h4>
+                <h4> Down payment:</h4> $<span id="p"></span>
                 <input type="range" min="0" max="1000" value="500" class="slider" id="principle" name = "principle" onChange="update()">
                             
-                <h4> Interest rate:</h4>
+                <h4> Interest rate:</h4> <span id="r"></span>%
                 <input type="range" min="0" max="15" value="7" class="slider" id="rate" name = "rate" onChange="update()">
                           
-                <h4> Time:</h4>
+                <h4> Time:</h4> <span id="t"></span> <select id="timetype" onChange="update()">
+                    <option value="0">years</option>
+                    <option value="1">months</option>
+                    <option value="2">weeks</option>
+                    <option value="3">days</option>
+                </select>
                 <input type="range" min="1" max="30" value="15" class="slider" id="time" name = "time" onChange="update()">
                 
             </br></br><p id="summary"> With a downpayment of <b>$<span id="p"></span></b>, you are borrowing <b>$<span id="loan"></span></b>
