@@ -26,7 +26,7 @@
             <div class="p-2" id="slidecontainer">
                 <h4> Select a mode:</h4>
                 
-                <b>One Payment: </b><input type="radio" id="simpleInterestRadio" name="interestType" value="Simple Interest" onclick="update()">
+                <b>One Payment:   </b><input type="radio" id="simpleInterestRadio" name="interestType" value="Simple Interest" onclick="update()">
                 <label for="simpleInterestRadio">Simple</label>
                     
                 <input type="radio" id="compoundInterestRadio" name="interestType" value="Compound Interest" onclick="update()">
@@ -35,8 +35,8 @@
                 <input type="radio" id="compareRadio" name="interestType" value="Compare" onclick="update()" checked="true">
                 <label for="compareRadio">Multiple Payments</label>
                 
-                <b> Down payment:</b> $<span id="p"></span>
-                <input type="range" min="0" max="1000" value="500" class="slider" id="principle" name = "principle" onChange="update()">
+                <br/><b> Down payment:</b> $<span id="p"></span>
+                <input type="range" min="0" max="1000" value="500" class="slider" id="principle" name = "principle" onChange="update()"> 
                             
                 <b> Interest rate:</b> <span id="r"></span>%
                 <input type="range" min="0" max="15" value="7" class="slider" id="rate" name = "rate" onChange="update()">
@@ -49,7 +49,7 @@
                 </select>
                 <input type="range" min="1" max="30" value="15" class="slider" id="time" name = "time" onChange="update()">
 
-                /* Summary text:
+                 <! -- Summary text:
             </br></br><p id="summary"> With a downpayment of <b>$<span id="p"></span></b>, you are borrowing <b>$<span id="loan"></span></b>
                     </span> at an interest rate of <b><span id="r"></span>%</b> per annum, for                
                     <label><span id="t"></span> </label>
@@ -59,9 +59,9 @@
                     <option value="2">weeks</option>
                     <option value="3">days</option>
                 </select>,
-                */
+                -- >
                 
-                <b>Compounded Frequency:</b>
+                <b>Compounded Frequency: </b>
                 <select id="freq" onChange="update()">
                     <option value="0">annually</option>
                     <option value="1">monthly</option>
