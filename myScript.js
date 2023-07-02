@@ -86,19 +86,11 @@ function update(){
             drawCompare(prin,loan,compoundIntAmount,simpleIntAmount);
             var difference = compoundIntAmount - simpleIntAmount;
 
-            document.getElementById("multiplepayments").innerHTML ="<b>Payment Frequency: </b>" +
-                    <select id="payfreq" onChange="update()">
-                    <option value="0">annually</option>
-                    <option value="1">monthly</option>
-                    <option value="2">biWeekly</option>
-                    <option value="3">weekly</option>
-                    <option value="4">daily</option></select>
-           
             if (difference>0){
                 document.getElementById("finalStatement").innerHTML = "The compound interest loan costs $" + difference.toFixed(2) + " more than the simple interest loan." 
             }
             else 
-               document.getElementById("finalStatement").innerHTML = "The compound interest loan costs $" + -1*difference.toFixed(2) + " less than the simple interest loan." 
+            document.getElementById("finalStatement").innerHTML = "The compound interest loan costs $" + -1*difference.toFixed(2) + " less than the simple interest loan." 
         }
 
         else if(document.getElementById("simpleInterestRadio").checked==true)
